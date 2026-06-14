@@ -79,6 +79,20 @@ function App() {
           <p>{weather.weather[0].description}</p>
           <p>Humidity: {weather.main.humidity}%</p>
           <p>Wind: {weather.wind.speed} m/s</p>
+         <div className="extra-info">
+  <div className="info-item">
+    <span>🌡️ Feels Like</span>
+    <span>{Math.round(weather.main.feels_like)}°C</span>
+  </div>
+  <div className="info-item">
+    <span>🌅 Sunrise</span>
+    <span>{new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}</span>
+  </div>
+  <div className="info-item">
+    <span>🌇 Sunset</span>
+    <span>{new Date(weather.sys.sunset * 1000).toLocaleTimeString()}</span>
+  </div>
+</div>
         </div>
       )}
 
